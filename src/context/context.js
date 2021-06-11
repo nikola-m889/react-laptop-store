@@ -15,6 +15,19 @@ class GlobalContext extends Component {
     windowSet: false,
   };
 
+   componentDidMount() {
+    this.defaultData();
+    const cart = localStorage.getItem("cartData");
+    this.setState({ cart: JSON.parse(cart) ? JSON.parse(cart) : [] });
+    const final = localStorage.getItem("costFinal1");
+    this.setState(
+      { finalCost: JSON.parse(final) ? JSON.parse(final) : [] },
+      () => {
+        this.calcCost();
+      }
+    );
+  }
+  
   defaultData = () => {
     let productsCopy = [];
     laptopList.forEach((item) => {
@@ -61,8 +74,16 @@ class GlobalContext extends Component {
       () => {
         this.calcCost();
         this.windowOpen(id);
+        this.saveCart();
       }
     );
+  };
+  
+   saveCart = () => {
+    localStorage.setItem("cartData", JSON.stringify(this.state.cart));
+    localStorage.setItem("total1", JSON.stringify(this.state.totalNTax));
+    localStorage.setItem("tax1", JSON.stringify(this.state.tax));
+    localStorage.setItem("costFinal1", JSON.stringify(this.state.finalCost));
   };
 
   resetCart = () => {
@@ -75,6 +96,7 @@ class GlobalContext extends Component {
       () => {
         this.defaultData();
         this.calcCost();
+        this.saveCart();
       }
     );
   };
@@ -96,6 +118,7 @@ class GlobalContext extends Component {
         };
       },
       () => {
+        this.saveCart();
         this.calcCost();
       }
     );
@@ -157,6 +180,7 @@ class GlobalContext extends Component {
       },
       () => {
         this.calcCost();
+        this.saveCart();
       }
     );
   };
@@ -181,6 +205,7 @@ class GlobalContext extends Component {
         },
         () => {
           this.calcCost();
+          this.saveCart();
         }
       );
     }
