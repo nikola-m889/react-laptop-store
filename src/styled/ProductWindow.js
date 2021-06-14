@@ -22,7 +22,17 @@ export const ProductWindow = styled.div`
     padding: 20px;
   }
   img {
-    width: 170px;
+    width: 240px;
     height: 170px;
+  }
+   @media (max-width: 900px) {
+    .window-info {
+      width: 90%;
+      margin: auto;
+      font-size: 18px;
+    }
+    img {
+      width: 100%;
+    }
   }
 `;
