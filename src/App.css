@@ -91,7 +91,11 @@ button * {
 
 .item-cols .col1,
 .item-cols .col2 {
-  height: 70vh;
+  height: 60vh;
+}
+
+.item-cols .col1 img {
+  max-width: 100%;
 }
 
 .item-cols img {
@@ -297,6 +301,11 @@ h4 {
   line-height: 3rem;
   text-shadow: 4px 4px 25px rgb(250, 130, 17);
 }
+
+.container-preview {
+  padding-bottom: 300px;
+}
+
 /* Contact */
 .google-map {
   position: relative;
@@ -408,7 +417,7 @@ form {
   font-size: 17px;
 }
 
-@media (max-width: 978px) {
+@media (max-width: 900px) {
   .product-list {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -504,6 +513,23 @@ form {
   .about-row p {
     padding-top: 20px;
   }
+
+  .item-cols .col1,
+  .item-cols .col2 {
+    height: 25vh;
+  }
+ 
+  .item-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .item-cols img {
+    margin-left: 0;
+  }
+
+  .container-preview {
+    padding-bottom: 700px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -529,5 +555,8 @@ form {
   }
   .container-about {
     padding-bottom: 830px;
+  }
+  .container-preview {
+    padding-bottom: 1100px;
   }
 }
