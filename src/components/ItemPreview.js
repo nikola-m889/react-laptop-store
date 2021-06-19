@@ -11,6 +11,7 @@ export default class ItemPreview extends Component {
           const { id, name, img, price, info, manufacturer, inCart } =
             value.detailProduct;
           return (
+            <div className="container-preview">
             <div className="item-cols">
               <div class="col1">
                 <img src={img} alt="product" />
@@ -40,6 +41,7 @@ export default class ItemPreview extends Component {
                 </div>
               </div>
             </div>
+          </div>
           );
         }}
       </ContextConsumer>
