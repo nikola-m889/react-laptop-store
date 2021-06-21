@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CartProduct({ product, value }) {
-  const { id, img, title, price, count, total } = product;
+  const { id, img, name, price, count, total } = product;
   const { removeCartItem, incrementItem, decrementItem } = value;
 
   return (
@@ -13,7 +13,7 @@ export default function CartProduct({ product, value }) {
       <div>
         <span>Product</span>
         <br />
-        <p>{title}</p>
+        <p>{name}</p>
       </div>
 
       <div>
