@@ -377,7 +377,7 @@ form {
   justify-content: space-around;
   flex-flow: wrap;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .about-col-1 {
