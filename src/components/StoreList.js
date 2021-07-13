@@ -37,7 +37,7 @@ export default class StoreList extends Component {
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img
-                  src="./img/slider1x.jpg"
+                  src="./img/slider2x.jpg"
                   class="d-block w-100"
                   alt="offer1"
                 />
@@ -50,7 +50,7 @@ export default class StoreList extends Component {
               </div>
               <div class="carousel-item">
                 <img
-                  src="./img/slider2x.jpg"
+                  src="./img/slider1x.jpg"
                   class="d-block w-100"
                   alt="offer2"
                 />
